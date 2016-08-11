@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <title>酷炫特效</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/Style_fs.css" />
+    <link href="css/Hanwha.main.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/index.js"></script>
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+    <script egret="lib" src="libs/modules/egret/egret.min.js"></script>
+    <script egret="lib" src="libs/modules/egret/egret.web.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.web.min.js"></script>
+    <script egret="lib" src="libs/modules/tween/tween.min.js"></script>
+    <script src="js/index/TweenMax.min.js"></script>
+
+    <script egret="lib" src="libs/modules/res/res.min.js"></script>
+    <!--modules_files_end-->
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+    <script src="main.min.js"></script>
+    <!--game_files_end-->
+    <!--[if lt IE 9]>
+        <script>
+            document.write("您的浏览器版本过低，存在安全隐患，请升级浏览器");
+        </script>
+    <![endif]-->
+    <!--[if IE 9]>
+        <script>
+        $(document).ready(function(){
+            $("#ball").css("display","none");
+            $("#pro,#news,#hsa,#about").removeClass("Admission");
+        })
+        </script>
+    <![endif]-->
+    <script>
+        var isUnderIE8 = false;
+    </script>
+    <script>
+        var is_tablet = false;
+        var resourcePath = "/";
+        var webDomain = "/";
+    </script>
+    <style type="text/css">
+        .ex {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fsbanner {
+            margin-top: 10px;
+        }
+    </style>
+    
+
+</head>
+<body class="theme-first">
+
+    <div id="mask" onclick="openNav()"></div>
+    <div id="wrap">
+        <div id="intro_dimmed"></div>
+        <div id="main">
+            <div class="main_container">
+                <div id="dot_menu">
+                    <div class="dot_menu_box">
+                        <a href="javascript:">
+                            <div class="icons">
+                                <div class="dot"><img src="./images/index/dot.png" alt=""></div>
+                                <div class="icon"><img src="./images/index/side_icon1.png" alt=""></div>
+                            </div>
+                        </a>
+                        <a href="javascript:;">
+                            <div class="icons">
+                                <div class="dot"><img src="./images/index/dot.png" alt=""></div>
+                                <div class="icon"><img src="./images/index/side_icon2.png" alt=""></div>
+                            </div>
+                        </a>
+                        <a href="javascript:;">
+                            <div class="icons">
+                                <div class="dot"><img src="./images/index/dot.png" alt=""></div>
+                                <div class="icon"><img src="./images/index/side_icon3.png" alt=""></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="section1" class="section section1">
+                    <div style="z-index:1000;position: absolute;width:100%;">
+                        <a href="#">
+                            <img src="./images/index/index_body_leftup_img.png" style="height:20px;float:left;width:20px;margin-top:20px;margin-left:20px">
+                        </a>
+                        <a href="#">
+                            <p class="head_right">EN</p>
+                        </a>
+                    </div>
+                    <ul class="bg_group">
+                        <li class="s1_bg1" style="z-index: 1; transform: scale(1, 1); opacity: 1;"></li>
+                        <li class="s1_bg2" style="z-index: 0; transform: scale(1, 1); opacity: 1;"></li>
+                        <!--<li class="s1_bg3" style="z-index: 0; transform: scale(1, 1); opacity: 1;"></li>-->
+                    </ul>
+                    <div class="main_contents">
+                        <ul class="circle">
+                            <li><img src="./images/index/lines1.png" alt=""></li>
+                            <li><img src="./images/index/lines2.png" alt=""></li>
+                            <li><img src="./images/index/lines3.png" alt=""></li>
+                            <li><img src="./images/index/lines4.png" alt=""></li>
+                            <li><img src="./images/index/lines5.png" alt=""></li>
+                            <li><img src="./images/index/lines6.png" alt=""></li>
+                            <li><img src="./images/index/lines7.png" alt=""></li>
+                        </ul>
+                        <div class="text_area">
+                            <ul class="text_box">
+                                <li class="mid_text_head">酷炫特效</li>
+                                <li class="mid_text_title_p1">酷炫特效</li>
+                                <li class="mid_text_title_p1" style="line-height:20px;margin-left: -450px;">一</li>
+                                <li class="mid_text_body">
+                                    酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效酷炫特效
+                                </li>
+                                <li class="scroll_info">
+                                    <div class="scroll_copy"><img src="./images/index/scroll_copy.png" alt="scroll"></div>
+                                    <div class="scroll_seq">
+                                        <div class="main-scroll-motion"><img src="./images/index/scroll.png" alt="scroll_seq"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="section2" class="section section2">
+                    <div class="bg2"></div>
+                    <div style="z-index:1000;position: absolute;width:100%;">
+                        <a href="#">
+                            <img src="./images/index/index_body_leftup_img.png" style="height:20px;float:left;width:20px;margin-top:20px;margin-left:20px">
+                        </a>
+                        <a href="#">
+                            <p class="head_right">EN</p>
+                        </a>
+                    </div>
+                    <div class="section_box">
+                        <div class="seq_circle">
+                            <canvas id="seq_canvas2" style="display:none;"></canvas>
+                        </div>
+                        <article class="htmleaf-container">
+                            <div class='ex' name='3' style="height:600px;">
+                                <ul>
+                                    <li>客户尊享</li>
+                                    <li style="">
+                                        <img src="./images/index/lingxing_03.png" alt=""> Client Privilege
+                                        <img src="./images/index/lingxing_03.png" alt="">
+                                    </li>
+                                </ul>
+                                <div class='fsbanner'>
+                                    <div style="background: url(./images/index/123123_03.png) no-repeat center;">
+                                        <span class='name'>销售过程</span>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px">销售过程</p>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px;margin-top:0;">一</p>
+                                        <p class="index_body_p2_body_body_p2_text" style="margin-left:450px">销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程销售过程</p>
+                                    </div>
+                                    <div style="background: url(./images/index/123123_02.png) no-repeat center;">
+                                        <span class='name'>业务范围</span>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px">业务范围</p>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px;margin-top:0;">一</p>
+                                        <p class="index_body_p2_body_body_p2_text" style="margin-left:450px">业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围</p>
+                                    </div>
+                                    <div style="background: url(./images/index/123123_01.png) no-repeat center;">
+                                        <span class='name'>代理商</span>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px">业务范围</p>
+                                        <p class="index_body_p2_body_body_p2_title" style="margin-left:400px;margin-top:0;">一</p>
+                                        <p class="index_body_p2_body_body_p2_text" style="margin-left:450px">业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围业务范围</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div id="section3" class="section section3" style="">
+                    <div class="bg3"></div>
+                    <div style="z-index:1000;position: absolute;width:100%;">
+                        <a href="#">
+                            <img src="./images/index/index_body_leftup_img.png" style="height:20px;float:left;width:20px;margin-top:20px;margin-left:20px">
+                        </a>
+                        <a href="#">
+                            <p class="head_right">EN</p>
+                        </a>
+                    </div>
+
+
+
+                    <div class="section_box">
+                        <div class="seq_circle">
+                            <canvas id="seq_canvas3" style="display:none;"></canvas>
+                        </div>
+
+                        <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+                             data-entry-class="Main"
+                             data-orientation="auto"
+                             data-scale-mode="showAll"
+                             data-frame-rate="30"
+                             data-content-width="1920"
+                             data-content-height="980"
+                             data-show-paint-rect="false"
+                             data-multi-fingered="2"
+                             data-show-fps="false" data-show-log="false"
+                             data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+                        </div>
+                        
+
+
+                    </div>
+                </div>
+                <div id="section4" class="section section4">
+                    <div class="section_box">
+                        <div class="content">
+                            <div class="tuijian_list">
+                                <h4>
+                                    <div class="cb-projects-right">
+                                        <div class="cb-projects-line"></div>
+                                        <div class="cb-projects-menu">
+                                            <div class="cb-projects-menu-inner">
+                                                <div class="cb-projects-menu-year">
+                                                    <div>2016</div>
+                                                </div>
+                                                <span class="this">
+                                                    <div class="cb-projects-menu-item-num"><div>8月</div></div>
+                                                    <div class="cb-projects-menu-item-arr">——</div>
+                                                    <div class="cb-projects-menu-item-title">2016年全球异构计算HSA峰会</div>
+                                                </span>
+                                                <div class="cb-projects-menu-year">
+                                                    <div>2015</div>
+                                                </div>
+                                                <span class="">
+                                                    <div class="cb-projects-menu-item-num"><div>12月</div></div>
+                                                    <div class="cb-projects-menu-item-arr">——</div>
+                                                    <div class="cb-projects-menu-item-title">我国首次下一代异构计算处理器研讨会侧记</div>
+                                                </span>
+                                                <span class="">
+                                                    <div class="cb-projects-menu-item-num"><div>11月</div></div>
+                                                    <div class="cb-projects-menu-item-arr">——</div>
+                                                    <div class="cb-projects-menu-item-title">John Glossner博士成功当选HSA主席</div>
+                                                </span>
+                                                <span class="">
+                                                    <div class="cb-projects-menu-item-num"><div>10月</div></div>
+                                                    <div class="cb-projects-menu-item-arr">——</div>
+                                                    <div class="cb-projects-menu-item-title">我司参加2015世界互联网大会！</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </h4>
+                                <div class="kk">
+                                    <div class="k" id="ticket_box" style="display: block;">
+                                        <div class="cb-projects-left">
+                                            <div class="cb-projects-items">
+                                                <div data-project-name="borough" class="cb-projects-item -active">
+                                                    <div data-project-name="borough" class="cb-project -half cb-borough-project">
+                                                        <div class="cb-project-wrap">
+                                                            <div class="cb-project-fill"></div>
+                                                            <div class="cb-project-body">
+                                                                <div class="cb-project-body-inner">
+                                                                    <div class="nowsbody">
+                                                                        <h2 class="trans_delay2">2016年全球异构计算HSA峰会</h2>
+                                                                        <p class="trans_delay3">
+                                                                            HSA（异构系统架构基金会）是全球下一代异构多核处理器最重要的国际组织之一，汇集大批在全球具有重大影响力的处理器相关软硬件企业，共同致力于建设和完善HSA生态系统。2016年，AMD、ARM、Imagination、联发科、华夏芯等HSA成员均宣布将推出基于HSA架构的处理器产品。
+                                                                            <br>为此，HSA与中国半导体行业协会拟于8月22-23日在中国北京联合举办“2016年全球异构计算HSA峰会”，并由华夏芯、AMD、联发科等共同承办。
+                                                                        </p>
+                                                                        <a href="new_1.html" class="more-fff trans_delay4">查看更多<em>&nbsp;</em></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="k hide" style="display: none;">
+                                        <div class="cb-projects-left">
+                                            <div class="cb-projects-items">
+                                                <div data-project-name="borough" class="cb-projects-item -active">
+                                                    <div data-project-name="borough" class="cb-project -half cb-borough-project">
+                                                        <div class="cb-project-wrap">
+                                                            <div class="cb-project-fill"></div>
+                                                            <div class="cb-project-body">
+                                                                <div class="cb-project-body-inner">
+                                                                    <div class="nowsbody">
+                                                                        <h2 class="trans_delay2">我国首次下一代异构计算处理器研讨会侧记</h2>
+                                                                        <p class="trans_delay3">近年来，作为信息技术的核心部件，处理器芯片已经开始步入“大计算”或者“异构计算”时代。与目前的同构计算相比，异构计算使得芯片的性能和能效均实现大幅度提升。新一代异构计算芯片为我国的处理器产业追赶国际先进水平提供了难得的历史机遇，应用前景极为广阔。</p>
+                                                                        <a href="new0.html" class="more-fff trans_delay4">查看更多<em>&nbsp;</em></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="k hide" style="display: none;">
+                                        <div class="cb-projects-left">
+                                            <div class="cb-projects-items">
+                                                <div data-project-name="borough" class="cb-projects-item -active">
+                                                    <div data-project-name="borough" class="cb-project -half cb-borough-project">
+                                                        <div class="cb-project-wrap">
+                                                            <div class="cb-project-fill"></div>
+                                                            <div class="cb-project-body">
+                                                                <div class="cb-project-body-inner">
+                                                                    <div class="nowsbody">
+                                                                        <h2 class="trans_delay2">John Glossner博士成功当选HSA主席</h2>
+                                                                        <p class="trans_delay3">
+                                                                            日前，华夏芯（北京）通用处理器技术有限公司的全资子公司--美国GPT公司首席执行官，同时也是国家外专千人计划专家的John
+                                                                            Glossner博士成功当选全球“异构系统架构基金会（Heterogeneous System
+                                                                            Architecture Foundation，HSA）”主席。这也是中国集成电路企业高管第一次在高端处理器领域的国际组织中担任最高领导职务。
+                                                                        </p>
+                                                                        <a href="new2.html" class="more-fff trans_delay4">查看更多<em>&nbsp;</em></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="k hide" style="display: none;">
+                                        <div class="cb-projects-left">
+                                            <div class="cb-projects-items">
+                                                <div data-project-name="borough" class="cb-projects-item -active">
+                                                    <div data-project-name="borough" class="cb-project -half cb-borough-project">
+                                                        <div class="cb-project-wrap">
+                                                            <div class="cb-project-fill"></div>
+                                                            <div class="cb-project-body">
+                                                                <div class="cb-project-body-inner">
+                                                                    <div class="nowsbody">
+                                                                        <h2 class="trans_delay2">我司参加2015世界互联网大会！</h2>
+                                                                        <p class="trans_delay3">2015年12月，华夏芯通用处理器技术有限公司作为唯一应邀的芯片类企业，参加了在浙江乌镇举办的第二届世界互联网大会。本届大会于12月16—18日举行。本次大会由中华人民共和国国家互联网信息办公室和浙江省人民政府共同主办、由浙江省网信办、浙江省经信委、桐乡市政府和CNNIC（中国互联网络信息中心）联合承办、以“互联互通、共享共治”为主题的首届世界互联网大会（乌镇峰会）在浙江省嘉兴市桐乡乌镇举行。本次大会是中国举办的规模最大、层次最高的互联网大会，也是世界互联网领域一次盛况空前的高峰会议。</p>
+                                                                        <a href="new1.html" class="more-fff trans_delay4">查看更多<em>&nbsp;</em></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="section5" class="section section5">
+                    <div class="section_box">
+                        <div class="seq_circle">
+                            <canvas id="seq_canvas4" style="display:none;"></canvas>
+                        </div>
+                        <ul class="section5-list">
+                            <li class="BoxSlide ab-child ab-left trans_delay0">
+                                <div class="ab-txtbox">
+                                    <h2>全球业务</h2>
+                                    <p>
+                                        <span>IP核设计</span><span>处理器IP核微架构和加速器设计</span><span>IP核和加速器授权许可。</span>
+                                        <br><span>SoC定制设计(与IP核互为支撑)</span><span>为客户定制或联合设计SoC。</span>
+                                    </p>
+                                </div>
+                                <div class="ab-bg"></div>
+                            </li>
+                            <li class="BoxSlide ab-child ab-right trans_delay2">
+                                <div class="ab-txtbox">
+                                    <h2>价值与定位</h2>
+                                    <p>
+                                        <span>致力于满足用户的痛点需求：</span><span>大幅降低IP核的成本和集成/维护的难度，</span><span>实现软件重用/共用。</span>
+                                        <br><span>专注异构可扩展低功耗多线程技术：</span><span>支持从移动终端到服务器、基站等多种设备。</span>
+                                    </p>
+                                </div>
+                                <div class="ab-bg"></div>
+                            </li>
+                        </ul>
+                        <footer class="clearfix indexfooter" style="position: absolute;">
+                            <div class="botnav">
+                                <div class="botchild botnab-left">
+                                    <a href="we-are.html">关于我们</a>
+                                    <a href="proDeatil_01.html">产品与技术</a>
+                                    <a href="robot.html">应用领域</a>
+                                    <a href="newslist.html">新闻中心</a>
+                                    <a href="recruitment.html">招贤纳士</a>
+                                    <a href="contact.html">联系我们</a>
+                                </div>
+                                <div class="botchild botnav-right">
+                                    <a href="law.html">法律声明</a>
+                                    <a href="privacy.html">隐私</a>
+                                    <a href="cookie.html">Cookie政策</a>
+                                    <a href="sitemap.html">网站地图</a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index/jquery.transit.min.js"></script>
+    <script data-main="js/index/Hanwha.Main" src="js/index/require.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/fsbanner.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.ex[name=3] .fsbanner').fsBanner({
+                trigger: 'mouse'
+            });
+        });
+    </script>
+    <script>
+        jqtab = function (tabtit, li, tab_conbox, div, shijian, thistab) {
+            $(tabtit).find(li).bind(shijian, function () {
+                $(this).addClass(thistab).siblings(li).removeClass(thistab);
+                var activeindex = $(tabtit).find(li).index(this);
+                $(tab_conbox).children(div).eq(activeindex).show().siblings().hide();
+                return false;
+            });
+        };
+    </script>
+    <script>
+        $(document).ready(function () {
+            jqtab(".tuijian_list h4", "span", ".kk", ".k", "mouseenter", "this");
+        });
+    </script>
+</body>
+</html>
